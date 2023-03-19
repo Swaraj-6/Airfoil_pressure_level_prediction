@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <title>Scaled sound pressure level prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            background-image: url(https://images4.alphacoders.com/741/thumbbig-74136.webp);
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #f5f5f5;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+            color: #f5f5f5;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            background-color: #fff;
+            box-shadow: 0 0 5px #007bff;
+        }
+
+        .input-group input:valid {
+            background-color: #fff;
+        }
+
+        .input-group input:invalid {
+            background-color: #ffe5e5;
+        }
+
+        .input-group .error-message {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            /* background-color: #f00; */
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .input-group input:focus+.error-message {
+            display: block;
+        }
+
+        .button {
+            background-color: #ffe5e5;
+            /* Green */
+            border: none;
+            color: black;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .input-group {
+                display: inline-block;
+                width: calc(50% - 10px);
+                margin-right: 20px;
+            }
+
+            .input-group:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Scaled sound pressure level prediction</h1>
+
+        <h5>This model predicts scaled sound pressure level on airfoils at various wind tunnel speeds and angles of attack.</h5>
+
+        <form method="post", action="/predict">
+            <div class="input-group">
+                <label for="name">Frequency:</label>
+                <input type="text" id="name" name="Frequency" required>
+            </div>
+
+            <div class="input-group">
+                <label for="name">Angle of attack:</label>
+                <input type="text" id="name" name="Angle_of_attack" required>
+            </div>
+
+            <div class="input-group">
+                <label for="name">Chord length:</label>
+                <input type="text" id="name" name="Chord_length" required>
+            </div>
+
+            <div class="input-group">
+                <label for="name">Free-stream velocity:</label>
+                <input type="text" id="name" name="F-S_velocity" required>
+            </div>
+
+            <div class="input-group">
+                <label for="name">Suction side:</label>
+                <input type="text" id="name" name="Suction_side" required>
+            </div>
+            <br>
+            <div class="button">
+                <button type="submit">
+                    Send
+                </button>
+            </div>
+
+        </form>
+        <h5>Airfoil pressure level is {{result}} in decibels</h5>
+
+    </div>
+
+</body>
+
+</html>
