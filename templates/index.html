@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             background-color: black;
-            background-image: url(https://images4.alphacoders.com/741/thumbbig-74136.webp);
+            background-image: url(https://images5.alphacoders.com/105/thumbbig-1058571.webp);
 
             /* Full height */
             height: 100%;
@@ -120,7 +120,7 @@
 
         <h5>This model predicts scaled sound pressure level on airfoils at various wind tunnel speeds and angles of attack.</h5>
 
-        <form method="post", action="/predict">
+        <form method="post", action="/">
             <div class="input-group">
                 <label for="name">Frequency:</label>
                 <input type="text" id="name" name="Frequency" required>
@@ -153,7 +153,7 @@
             </div>
 
         </form>
-        <h5>Airfoil pressure level is {{result}} in decibels</h5>
+        <h5>{{result}}</h5>
 
     </div>
 

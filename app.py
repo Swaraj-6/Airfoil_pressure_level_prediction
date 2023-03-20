@@ -28,7 +28,7 @@ def predict():
         return jsonify(f"The pressure level is {result} decibels.")
         
 
-@app.route("/predict", methods=['POST'])
+@app.route("/", methods=['POST'])
 def predictForm():
     if(request.method=='POST'):
         f1 = int(request.form['Frequency'])
@@ -41,8 +41,9 @@ def predictForm():
         testing_set = np.array([f1,f2,f3,f4,f5])
         pickled_model = pickle.load(open('model.pkl','rb'))
         result = pickled_model.predict(testing_set.reshape(1,-1))
+        return_string = f"Airfoil pressure level is {result} in decibels"
 
-        return render_template("index.html", result = result)
+        return render_template("index.html", result = return_string)
 
 
 if __name__=="__main__":
