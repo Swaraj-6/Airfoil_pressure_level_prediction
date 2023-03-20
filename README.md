@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-# Airfoil_pressure_level_prediction
-=======
-
 # Airfoil_pressure_level_prediction
 
 This model predicts scaled sound pressure level on airfoils of a space shuttle at various wind tunnel speeds and angles of attack.
@@ -70,4 +65,4 @@ Or you can run test in api using postman application, for that follow these step
 ## Demo
 
 
->>>>>>> d47d4588e6127f04a4ee5582c7c8ebd08fbf576e
+
