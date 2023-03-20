@@ -11,7 +11,7 @@ app = Flask(__name__)
 def main():
     return render_template("index.html")
 
-@app.route("/predict/postman", methods=['POST'])
+@app.route("/api", methods=['POST'])
 def predict():
     if(request.method=='POST'):
         f1 = int(request.json['Frequency'])
