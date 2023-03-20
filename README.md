@@ -64,5 +64,11 @@ Or you can run test in api using postman application, for that follow these step
 
 ## Demo
 
+For using it as webpage:
+![image](https://user-images.githubusercontent.com/100062524/226440337-f4d755be-a91f-45e3-a521-841a90ca455f.png)
+
+
+For using it as api in postman:
+![image](https://user-images.githubusercontent.com/100062524/226440121-4b7fc1f6-7595-4410-a5bd-ebce8d304925.png)
 
 
